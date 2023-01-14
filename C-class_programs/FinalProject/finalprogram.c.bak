@@ -1,6 +1,6 @@
 #include <stdio.h>
-
-void function(int x, int y);
+#include <stdlib.h>
+void function();
 
 /*************************************************
 * Function Title: Main
@@ -21,7 +21,27 @@ void function(int x, int y);
 
 int main()
 { 							 // Begin
-	printf(“Hello World\n”); // Print “Hello World”
+	int num = 5;
+	FILE *ptr, *ptrtwo;
+	
+	ptr = fopen("output.txt","w");
+	//ptr = fopen(argv[1], "w");
+	ptrtwo = fopen("input.txt", "r");
+	if(ptrtwo == NULL)
+	{
+      printf("Error!");   
+      exit(1);             
+	}
+	if(ptr == NULL)
+	{
+      printf("Error!");   
+      exit(1);             
+	}
+	num = fgetc(ptrtwo);
+	printf("%d", num);
+	fprintf(ptr,"%d, %d\n", num, num*num);
+	fclose(ptr);
+	fclose(ptrtwo);
 	return 0;
 } 							 // End
 
@@ -43,4 +63,4 @@ int main()
 * End
 *************************************************/
 
-void function()
+void function(){}

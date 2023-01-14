@@ -16,8 +16,33 @@
 *************************************************/
 #include <stdio.h>
 
+#define Size 5
+
+
 int main()
 { 							 // Begin
-	printf(“Hello World\n”); // Print “Hello World”
+
+int i, Num, Sum, Pro;
+int array[5] = {0};
+Sum = 0;
+Pro = 1;
+printf("Please enter 5 integers: ");
+for (i = 0; i < Size; i++) {
+	scanf("%d", &Num);
+	array[i] = Num;
+}
+
+for ( i= 0; i < Size; i++) {
+	Num =array[i];
+	Sum += Num;
+}
+printf("sum of array: %d\n", Sum);
+
+for (i = 0; i < Size; i++) {
+	Num = array[i];
+	Pro = Pro*Num;
+}
+printf("Product of array: %d", Pro);
+
 	return 0;
 } 							 // End

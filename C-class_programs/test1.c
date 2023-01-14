@@ -146,46 +146,11 @@ Begin
 End
 ***********************************************************************/
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
-#define MAX_LEN 15
-
-int main(int argc, char *argv[])
-{ 							 
-// Begin
-	char temp[MAX_LEN];
-	int arg;
-	arg = atoi(argv[1]);
-	char *arrayofstrings[arg];
-	char *tempsorter;
-	int i;
-//get the input of all the charecters
-	for(i=0; i < arg; i++){
-		printf("Enter a word: ");
-		scanf("%s", temp);
-		arrayofstrings[i] = malloc(strlen(temp)+1);
-		if (arrayofstrings[i] == NULL)
-		{
-			printf("Memory allocation error!\n");
-			exit(1);
-		}
-		strcpy(arrayofstrings[i], temp);
-	}
-//sort the array
-	for(i=0; i < arg; i++){
-		if(strcmp(
-		tempsorter = *arrayofstrings[i];
-		
-		
-		
-		
-	}
-//print final array
-	printf("Final sorted: ");
-	for(i=0; i < arg; i++){
-		printf("%s ", arrayofstrings[i]);
-	}
-
+int main(void) {
+	printf("Hello");
+	printf("\n");
+	
 	return 0;
 }

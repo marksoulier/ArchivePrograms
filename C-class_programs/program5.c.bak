@@ -1,0 +1,53 @@
+/*************************************************
+* Function Title: Main
+*
+* Summary: Prints “Hello World” on console
+*
+* Inputs: none
+* Outputs: none
+*
+* Compile instructions: gcc program5.c –o program5.exe
+**************************************************
+* Pseudocode
+*
+* Begin
+* 	Declare Variables
+	Get positive floating point number
+	Create Newtons method table
+	Compute absolute diffrence in diffrence of y values
+	Print final square value
+* End
+*************************************************/
+#include <stdio.h>
+
+int main()
+{ 							
+// Begin
+	int n;
+	float Num;
+	double y1, NewtonNum, Average, abdiff;
+	y1 = 1;
+	abdiff = 1;
+// Declare Variables
+	printf("Enter a positive integer: ");
+	scanf("%f", &Num);
+	n = 10;
+// Create Newtons method table
+
+	while (abdiff > 0.00001) {
+		NewtonNum = Num/y1;
+		Average = (NewtonNum - y1)/2 + y1;
+// Compute absolute diffrence in diffrence of y values
+
+		abdiff = Average - y1;
+		if (abdiff > 0) {
+		} else {
+			abdiff = -1 * abdiff;
+		}
+		y1 = Average;
+	}
+// Print final square value
+	printf("Square root: %.5f", Average);
+	return 0;
+// End
+}

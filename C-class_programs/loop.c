@@ -1,4 +1,3 @@
-
 /*Cygwincode
 cd - change dirrectory
 	cd C:/Users/A02324710/Desktop/Programs
@@ -16,10 +15,11 @@ cp - copy file
 mv - move file
 	IDK dont use
 Ctrl-N - Clear Cygwin
+clear - clear Cygwin
 */
-/*C Note Sheet
-
+/*C code basic
 // - comment
+/n- new line
 \n- new line
 \a - bell
 \b - backspace
@@ -34,8 +34,9 @@ scanf("%d", &myNum);
 char - %c
 int - %d or %i
 float - %f = 1.99
-%5.2f - gives 5 charecters to print number and 2 decimal places
-
+%5.2f - gives 5 charecters to print number decimal is included and 2 decimal places
+%5.2e - gives 
+%m.pX - use for scan in a certain amount of digits or for print a certian amount of digits
 string - %s
 double - %lf
 pointer- %p
@@ -45,6 +46,57 @@ cont NUMBERZERO = 0; this number will not change its a constant, usually in all 
 || - or
 ! - not
 
+preprocessed code
+# define MAX_NUM (400)
+#include <library>
+*/
+/* Chapter 1
+
+int: there is a limit to the largest number that can be held by a int
+
+float: floats are apporximations, close as the computer can get
+	-use f as a indication at the end of a number
+	-height = 6.79f;
+
+declare a variable:
+int height;
+ -should be done first after main
+
+assignment:
+height = 8;
+
+%d or other is a placeholder
+
+# library
+	-directive
+	-#define SCALE_FACTOR 5.0f
+		-called macros
+		-creates a constant
+
+*/
+/* Chapter 4
+Math-
+10 % 3 = gives value 1, 1 is the remainder
+when mix int and float you recive a float
+Order of operations exists
+
+x++ - adds 1 to x and assigns value
+x += 1 - adds 1 to x and assigns value
+
+*/
+/*Chapter 5
+&& - and
+|| - or
+! - not
+== - equal
+>= - greater or equal
+<= - less or equal
+
+
+
+
+*/
+/*C code functions
 if (condition) {
 
 }	else if (condition) {
@@ -113,30 +165,6 @@ struct myPerson{
 	Person1.Name = "text"; -- not allowed use in code strcpy(Person1.Name, "some text");
 	
 */
-/* Class notes
-
-int: there is a limit to the largest number that can be held by a int
-
-float: floats are apporximations, close as the computer can get
-	-use f as a indication at the end of a number
-	-height = 6.79f;
-
-declare a variable:
-int height;
- -should be done first after main
-
-assignment:
-height = 8;
-
-%d or other is a placeholder
-
-# library
-	-directive
-	-#define SCALE_FACTOR 5.0f
-		-called macros
-		-creates a constant
-
-*/
 /*********************************************************************
 Program name: raw.c
 Description: 
@@ -146,46 +174,15 @@ Begin
 End
 ***********************************************************************/
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
-#define MAX_LEN 15
-
-int main(int argc, char *argv[])
-{ 							 
-// Begin
-	char temp[MAX_LEN];
-	int arg;
-	arg = atoi(argv[1]);
-	char *arrayofstrings[arg];
-	char *tempsorter;
-	int i;
-//get the input of all the charecters
-	for(i=0; i < arg; i++){
-		printf("Enter a word: ");
-		scanf("%s", temp);
-		arrayofstrings[i] = malloc(strlen(temp)+1);
-		if (arrayofstrings[i] == NULL)
-		{
-			printf("Memory allocation error!\n");
-			exit(1);
-		}
-		strcpy(arrayofstrings[i], temp);
-	}
-//sort the array
-	for(i=0; i < arg; i++){
-		if(strcmp(
-		tempsorter = *arrayofstrings[i];
-		
-		
-		
-		
-	}
-//print final array
-	printf("Final sorted: ");
-	for(i=0; i < arg; i++){
-		printf("%s ", arrayofstrings[i]);
-	}
-
+int main(void) {
+int digits = 0, n;
+printf("Enter a nonnegative integer: ");
+scanf("%d", &n);
+do {
+n /= 10;
+digits++;
+} while (n > 0);
+printf("The number has %d digit(s).\n", digits);
 	return 0;
 }

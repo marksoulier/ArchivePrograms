@@ -1,0 +1,167 @@
+/*************************************************
+* Function Title: Main
+*
+* Summary: Prints the English representation of a number 1 to 99
+*
+* Inputs: a integer between 1 and 99
+* Outputs: English representation in words
+*
+* Compile instructions: gcc program3_2.c –o project3_2.exe
+**************************************************
+* Pseudocode
+*
+* Begin
+	Ask user for integer from 1 to 99
+	Get integer
+	calculate integers first and second digit
+	print starting line of output statement
+	Do switch for numbers 1-20 / print english representation
+	Do switch for tens place / print english representation
+	Do switch for the ones place / print english representation
+* End
+*************************************************/
+#include <stdio.h>
+
+int main()
+{ 					
+	// Begin
+	int Num, FNum, SNum;
+	
+	// Ask user for integer from 1 to 99
+	printf("Enter a number between 1 and 99: ");
+	
+	// Get integer
+	scanf("%d", &Num)
+	;
+	// calculate integers first and second digit
+	FNum = (Num - (Num % 10)) / 10;
+	SNum = Num % 10;
+	
+	// print starting line of output statement
+	printf("The English representation of %d is ", Num);
+	
+	// Do switch for numbers 1-20 / print english representation
+	switch (Num) {
+		case 1:
+			printf("one");
+			break;
+		case 2:
+			printf("two");
+			break;
+		case 3:
+			printf("three");
+			break;
+		case 4:
+			printf("four");
+			break;
+		case 5:
+			printf("five");
+			break;
+		case 6:
+			printf("six");
+			break;
+		case 7:
+			printf("seven");
+			break;
+		case 8:
+			printf("eight");
+			break;
+		case 9:
+			printf("nine");
+			break;
+		case 10:
+			printf("ten");
+			break;
+		case 11:
+			printf("eleven");
+			break;
+		case 12:
+			printf("twelve");
+			break;
+		case 13:
+			printf("thirteen");
+			break;
+		case 14:
+			printf("fourteen");
+			break;
+		case 15:
+			printf("fifteen");
+			break;
+		case 16:
+			printf("sixteen");
+			break;
+		case 17:
+			printf("seventeen");
+			break;
+		case 18:
+			printf("eighteen");
+			break;
+		case 19:
+			printf("nineteen");
+			break;
+		case 20:
+			printf("twenty");
+		break;
+		default:
+	// Do switch for tens place / print english representation
+			switch (FNum) {
+				case 2:
+					printf("twenty");
+					break;
+				case 3:
+					printf("thirty");
+					break;
+				case 4:
+					printf("fourty");
+					break;
+				case 5:
+					printf("fifty");
+					break;
+				case 6:
+					printf("sixty");
+					break;
+				case 7:
+					printf("seventy");
+					break;
+				case 8:
+					printf("eighty");
+					break;
+				case 9:
+					printf("ninty");
+					break;
+			}
+	// Do switch for the ones place / print english representation
+			switch (SNum) {
+				case 0:
+					break;
+				case 1:
+					printf("-one");
+					break;
+				case 2:
+					printf("-two");
+					break;
+				case 3:
+					printf("-three");
+					break;
+				case 4:
+					printf("-four");
+					break;
+				case 5:
+					printf("-five");
+					break;
+				case 6:
+					printf("-six");
+					break;
+				case 7:
+					printf("-seven");
+					break;
+				case 8:
+					printf("-eight");
+					break;
+				case 9:
+					printf("-nine");
+					break;
+			}
+}
+	return 0;
+} 	// End

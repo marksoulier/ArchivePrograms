@@ -110,34 +110,146 @@ short int- stores short int
 
 */
 /*Chapter 7
-narrowest to widest data type
-char- 
-short
-int 
-unsigned int
-long
-unsigned long int
 float - hold up to 10^38 number but with precision of 6 digits not of more
-	place f at the end of numbers n = 5.605f
 double - hold up to 10^308 with 15 digits of precision
-long double - biggest container we have 
-
+long double - 
 %e - put in exponental
 &g - program decided to do exponental or floating
 %f - write with a floating point number
 
-casting
-frac_part = f - (int) f; - (type) variable gives int value not float
 
 
-adding multiple values
+*/
+/* Chapter 8
+array
+# define N 10 - Sets N to a Constant variable
 
-int -> unsigned int -> long int -> unsigned long int
-float -> double -> 
+int a[N];
+int a[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+int a[] = {1, 2, 3, 4, 5}; - is set to a specific amount of array
+int a[15] = {[2] = 29,  [9] = 7, [14] = 48}; - inicialize specific elements
+if array has less than 10 elements then the rest will be 0s
+a array undefined does not mean they are all 0s
 
-typedef char var;- define a new type called var that has properties of char
-sizeof(type-name) -  tells us how many bits there are as int value
-1 bit = 8 byte 
+1st element = a[0]
+scanf("%d", &a[0]);
+printf("%d", &a[0]);
+
+multidementinal arrays
+int a[5][5]; - give array of 5 variables with 5 variable in each varialbe
+
+
+Const char hex_chars[] = {'0', '1'}
+
+
+
+*/
+/* Chapter 9
+Functions
+-place before main
+type name_function(type parameter1, type parameter2) - declaration
+{
+	defenition
+	return (parameter1 + parameter2);
+}
+
+in main function call this function
+
+name_function(parameter1, parameter2) - will result in the type of the function with return value
+
+
+
+
+
+*/
+/*Chapter 11
+
+pointers
+-holds an address
+int *ptr;- can only point to integer type variables
+
+ptr = &variable; - set the adress of variable to ptr
+
+a = *ptr -gives the data of variable to a
+
+alias - 2 diffrent pointers to the same location
+
+
+when declaring a pointer always inicialize it to an address
+int *ptr = &a[0];
+
+*/
+/*Chapter 12
+if p is a pointer to a element in an array
+p + 1 - pointer one element greater in an array
+p - 1 - pointer one element less in the array
+p - q - gives the diffrence in elements that are being pointed to in an array
+for ( p = &a[0]; p < &a[N]; p++)
+	sum += *p;
+
+
+
+
+*/
+/*chapter 13
+%s - string of one word
+gets() - gets a multi word string
+string = array of charecters
+the string array is a address
+ends the string with a /0 null charecter 
+
+sizeof(string)- gives the size of the array
+
+strcpy(string1, string2, sizeof(string1);
+strlen(string1) - gives length of string without the null charecter
+strcat(string1, string2) - appendes string1 with charecters of string2
+strncat(str1, str2, 10) - appeneds to a certian limit
+strcmp(str1, str2) - compares 2 strings
+
+char *array[]- ragged array - a array pointers to strings
+
+multidimentional array
+
+
+<string.h>
+Command line arguments
+int main(int argc, char *argv[])
+- this is so we can take command line arguments
+argc - amount of arguments
+argv - a array of pointers to the arguments stored as strings
+*/
+/* Chapter 14
+C program -> preprocessor -> modified c code -> compiler -> object code
+s
+*/
+/* Chapter 15
+
+
+
+*/
+/* Chapter 16
+
+struct {
+	int number;
+	char name[NAME_LEN];
+	int on_hand;
+} part1 = {528, "DISK", 10}
+, part2;
+- creates variables
+
+part1.number - gives the number of part1
+
+struct part {
+	int number;
+	char name[NAME_LEN];
+	int on_hand;
+};
+-creates a new type
+
+type = struct part
+struct part part1; - inicialize t
+
+
 
 */
 /*C code functions
@@ -212,9 +324,14 @@ struct myPerson{
 /*C Libraries
 <stdio.h> - 
 <float.h> -
-
-
+<time.h> - gives the time as an integer
+<stdlib.h>- gives a random number
+strand(from <stdlib.h>) - inicialize random generator
+rand() - produces a random number
 */
+
+
+
 /*********************************************************************
 Program name: raw.c
 Description: 
@@ -225,7 +342,23 @@ End
 ***********************************************************************/
 #include <stdio.h>
 
+#define N 100
+
 int main(void) {
-	int D1, D2, D3;
+	int i, NumOne, NumTwo, NumThree;
+	char array[N] = {1};
+	NumOne = 1;
+	NumTwo = 0;
+	for (i = 0; i < N; i++){
+		NumThree = NumOne + NumTwo;
+		array [i] = NumThree;
+		NumOne = NumTwo;
+		NumTwo = NumThree;
+	}
+
+	for(i = 0; i < N; i++) {
+		printf("%5d\n", array[i]);
+	}
+	
 	return 0;
 }
